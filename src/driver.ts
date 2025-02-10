@@ -225,6 +225,7 @@ export function driver(options: Config = {}): Driver {
       popover: {
         showButtons: calculatedButtons,
         nextBtnText: !hasNextStep ? doneBtnText : undefined,
+        nextBtnClass: !hasNextStep ? 'driver-popover-done-btn' : '',
         disableButtons: [...(!hasPreviousStep ? ["previous" as AllowedButtons] : [])],
         showProgress: showProgress,
         progressText: progressTextReplaced,

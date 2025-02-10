@@ -27,6 +27,9 @@ export type Popover = {
   nextBtnText?: string;
   prevBtnText?: string;
 
+  // Button Classes
+  nextBtnClass?: string;
+
   // Called after the popover is rendered
   onPopoverRender?: (popover: PopoverDOM, opts: { config: Config; state: State; driver: Driver }) => void;
 
@@ -77,11 +80,16 @@ export function renderPopover(element: Element, step: DriveStep) {
     nextBtnText = getConfig("nextBtnText") || "Next &rarr;",
     prevBtnText = getConfig("prevBtnText") || "&larr; Previous",
     progressText = getConfig("progressText") || "{current} of {total}",
+    nextBtnClass = getConfig("nextBtnClass") || "",
   } = step.popover || {};
 
   popover.nextButton.innerHTML = nextBtnText;
   popover.previousButton.innerHTML = prevBtnText;
   popover.progress.innerHTML = progressText;
+
+  if(nextBtnClass){
+    popover.nextButton.classList.add(nextBtnClass);
+  }
 
   if (title) {
     popover.title.innerHTML = title;
