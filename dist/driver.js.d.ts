@@ -51,6 +51,7 @@ export type Config = {
 	prevBtnText?: string;
 	doneBtnText?: string;
 	nextBtnClass?: string;
+	prevBtnClass?: string;
 	onPopoverRender?: (popover: PopoverDOM, opts: {
 		config: Config;
 		state: State;
@@ -82,6 +83,7 @@ export type Popover = {
 	nextBtnText?: string;
 	prevBtnText?: string;
 	nextBtnClass?: string;
+	prevBtnClass?: string;
 	onPopoverRender?: (popover: PopoverDOM, opts: {
 		config: Config;
 		state: State;
